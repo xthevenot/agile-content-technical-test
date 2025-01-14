@@ -1,44 +1,11 @@
-.App {
-  text-align: center;
+/* setting the color palette */
+html {
+  --dark-gray: rgb(90, 90, 90);
+  --light-gray: rgb(148, 148, 148);
+  --focus-blue: rgb(69, 159, 189);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Google */
+/* App */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -49,8 +16,7 @@ body {
 header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
+  padding: 10px;
   background-color: #f8f9fa;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -58,8 +24,19 @@ header {
   z-index: 1000;
 }
 
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  bottom: 0;
+  z-index: 1000;
+}
+
 header img {
-  width: 100px;
   margin-right: 10px;
 }
 
@@ -74,12 +51,174 @@ header input {
 
 main {
   display: flex;
-  padding: 20px;
-  gap: 20px;
+  /* flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 80px);
+  text-align: center; */
 }
+
+.initial-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 120px);
+  text-align: center;
+}
+
+.logo {
+  img {
+    width: 200px;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.pt-2 {
+  padding-top: 20px;
+}
+
+/***************************
+*
+* Styling search container
+*
+****************************/
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #4285f4;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 20px;
+}
+
+.search-container button:hover {
+  background-color: #357ae8;
+}
+
+.search-container button:disabled {
+  opacity: 0.2;
+  background-color: grey;
+  cursor: default;
+}
+
+/***************************
+*
+* Styling search input
+*
+****************************/
+
+.searchbox {
+  --target-size: 48px;
+  --box-height: var(--target-size);
+  --border-radius: calc(var(--box-height) / 2);
+  --border-width: 2px;
+  --icon-size: calc(var(--box-height) * 3/4);
+  --side-margin: calc(var(--border-radius) / 2);
+  --icon-vertical-margin: calc((var(--box-height) - var(--icon-size)) / 2);
+}
+
+.searchbox {
+  height: var(--box-height);
+  /* width: 561px; */
+  min-width: 375px;
+  max-width: 90%;
+}
+
+.searchbox input[type="search"] {
+  border: var(--border-width) solid var(--dark-gray);
+  border-radius: var(--border-radius);
+  height: 100%;
+  width: 100%;
+}
+
+.searchbox svg {
+  fill: var(--dark-gray);
+  height: var(--icon-size);
+  width: var(--icon-size);
+}
+
+.searchbox input[type="search"] {
+  -webkit-appearance: none;
+  color: var(--dark-gray);
+  font-family: 'Noto Sans', Verdana, sans-serif;
+  font-size: 1rem;
+}
+
+.searchbox input[type="search"]::placeholder {
+  color: var(--light-gray);
+  opacity: 1;
+}
+
+.searchbox {
+  position: relative;
+}
+
+.searchbox svg {
+  position: absolute;
+  left: var(--side-margin);
+  top: var(--icon-vertical-margin);
+  bottom: var(--icon-vertical-margin);
+}
+
+.searchbox input[type="search"] {
+  padding-left: calc(var(--side-margin) + var(--icon-size) + 4px);
+  padding-right: var(--side-margin);
+}
+
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+
+.searchbox svg {
+  z-index: -1;
+}
+
+.searchbox input[type="search"] {
+  background: transparent;
+}
+
+.searchbox input[type="search"]:focus {
+  border-color: var(--focus-blue);
+  box-shadow: 0px 0px 5px var(--focus-blue);
+  outline: 1px solid transparent;
+}
+
+.searchbox input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='rgb(148, 148, 148)' %3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z' /%3E%3C/svg%3E%0A");
+  height: calc(var(--box-height) / 2);
+  width: calc(var(--box-height) / 2);
+}
+
+input[type="search"] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/***************************
+*
+* Styling results container
+*
+****************************/
 
 .results {
   flex: 2;
+  padding: 20px;
 }
 
 .results ul {
@@ -87,18 +226,61 @@ main {
   padding: 0;
 }
 
-.results li {
-  padding: 10px;
-  border: 1px solid #ddd;
-  margin-bottom: 10px;
-  border-radius: 4px;
+.results .result {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.result .url {
+  color: grey;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 5px;
+  word-wrap: break-word;
+}
+
+.result .url:hover {
+  text-decoration: underline;
+}
+
+.result .title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1a0dab;
+  margin-bottom: 5px;
+
+  &.grey {
+    color: #4d5156;
+  }
+}
+
+.result .title:hover {
+  text-decoration: underline;
   cursor: pointer;
-  transition: background-color 0.2s;
+}
+
+.result .description {
+  font-size: 14px;
+  color: #4d5156;
 }
 
 .results li:hover {
   background-color: #f0f0f0;
 }
+
+.no-results {
+  height: calc(100vh - 170px);
+}
+
+/***************************
+*
+* Styling details container
+*
+****************************/
 
 .details {
   display: block;
@@ -106,7 +288,7 @@ main {
   border: 1px solid #ddd;
   padding: 10px;
   border-radius: 4px;
-  /* display: none; */
+  margin-top: 30px;
 }
 
 .details img {
@@ -120,7 +302,11 @@ main {
   margin-top: 10px;
 }
 
-/* Mobile Styles */
+/***************************
+*
+* Styling for mobile size (responsive)
+*
+****************************/
 @media (max-width: 768px) {
   main {
     flex-direction: column;
@@ -137,9 +323,6 @@ main {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1001;
     padding: 20px;
-  }
-
-  .details.show {
     display: block;
   }
 
@@ -157,4 +340,5 @@ main {
   .overlay.show {
     display: block;
   }
+
 }

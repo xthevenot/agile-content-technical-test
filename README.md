@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# agile-content-technical-test
+Technical test for Agile-Content Company (only for this purpose)
+=======
+This project is build over [React.js](https://react.dev/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Install dependencies, build the project and run it
 
-In the project directory, you can run:
+Install dependencies
 
-### `npm start`
+```bash
+npm install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Then, build an optimized version:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm run build
+```
 
-### `npm test`
+Finally, run the server:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm run start
+```
 
-### `npm run build`
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Testing the UI
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Unit testing with Jest
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+We are using [Testing-library](https://testing-library.com/) to test the UI
 
-### `npm run eject`
+You can now run tests
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+#run unit tests
+npm run test
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deployed version
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The app has been deployed in my personal account
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+[Deployed version](https://agile-content-technical-test.vercel.app/)
 
-## Learn More
+## Technical test coverage
+All the test objectives have been done:
+* The application is a production grade (deployed in Vercel)
+* Views have been replicated as specified (and responsives)
+* 3 tests haven been done, including two testing full user case (searching for a valid input, searching for an invalid input)
+* With more time, I would optimize performance, to ensuire that views and components must be renderer only when specific props or states are updated. I would use Cypress to add integration tests for specific user cases.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Authors
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [@xthevenot](https://github.com/xthevenot)
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> [!IMPORTANT]  
+> All the **Google** branding elements are trade marked. Use only for the purpose of technical testing.
